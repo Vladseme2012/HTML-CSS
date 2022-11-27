@@ -1,0 +1,67 @@
+// %btn-style //создание шаблона!
+//     position: relative
+//     display: inline-block
+//     padding: 1.5rem 4rem
+//     font-size: 2rem
+//     line-height: 2.4rem
+//     letter-spacing: .5rem
+//     text-transform: uppercase
+//     text-decoration: none
+//     color: $color-grey-dark
+//     background-color: $color-white
+//     border-radius: 5rem
+//     transition: all .5s
+  
+.btn
+    &, &:link, &:visited
+        // @extend %btn-style // подключение шаблона
+        position: relative
+        display: inline-block
+        padding: 1.5rem 4rem
+        font-size: 2rem
+        line-height: 2.4rem
+        letter-spacing: .5rem
+        text-transform: uppercase
+        text-decoration: none
+        color: $color-grey-dark
+        background-color: $color-white       
+        border-radius: 5rem
+        border: none
+        transition: all .5s
+
+    &:hover
+        cursor: pointer
+        transform: translateY(-.6rem)
+        box-shadow: $box-shadow-button
+        &::after
+            opacity: 0
+            transform: scaleX(1.1) scaleY(1.3)
+    &:active
+        transform: translateY(-.4rem)
+    &::after
+        position: absolute
+        top: 0
+        left: 0
+        z-index: -1
+        content: ""
+        width: 100%
+        height: 100%
+        background-color: $color-white
+        border-radius: 5rem
+        display: inline-block
+        transition: all 1s
+    &_animated
+        animation-name: btnToUp
+        animation-duration: 3s
+        animation-delay: 2s
+        animation-timing-function: ease
+        backface-visibility: hidden
+        animation-fill-mode: backwards
+
+    &_brown
+      &, &:link, &:visited
+        color: $color-white
+        background: $brown-color-dark
+      &:hover
+        &::after
+          background: $brown-color-dark    

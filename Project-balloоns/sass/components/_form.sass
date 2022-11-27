@@ -1,0 +1,93 @@
+.book
+  height: 50rem
+  background: linear-gradient(110deg, rgba(255,255,255, .9) 0%, rgba(255,255,255, .9) 55%, rgba(186,133,84, .50) 55%, rgba(161,79,3, .50) 100%), url(../img/bg-form.jpg) center / cover no-repeat
+  box-shadow: $box-shadow-button
+  border-radius: .5rem
+  overflow: hidden
+
+.form
+  max-width: 60%
+  padding: 5rem
+  
+  &__group:not(:last-child)
+    margin-bottom: 2rem
+  &__group:nth-child(4)
+    margin-bottom: 4rem
+    
+  
+  &__input
+    width: 75%
+    padding: 2rem 0 2rem 2rem
+    font-size: $font-size-paragraph
+    letter-spacing: .2rem
+    font-weight: 400
+    color: $color-black
+    border: none
+    border-bottom: .3rem solid transparent
+    border-radius: .5rem
+  
+    &:focus
+      outline: none
+      border-bottom: .3rem solid $color-green-focus-valid
+      box-shadow: $box-shadow-button
+    &:focus:invalid
+      border-bottom: .3rem solid $color-green-focus-invalid
+  
+  &__input:placeholder-shown + &__label
+    opacity: 0
+    visibility: none
+    transform: translateY(-3rem)
+  
+  &__label
+    display: block
+    margin-top: 1rem
+    margin-left: 1.5rem
+    font-size: $font-size-paragraph
+    letter-spacing: .2rem
+    font-weight: 400
+    transition: all .4s linear
+
+  &__group-radio
+    display: inline-block
+    width: 45%
+
+  &__input-radio
+    display: none
+
+  &__label-radio
+    padding-left: 4rem
+    cursor: pointer
+    position: relative
+
+  &__button-radio
+    display: block
+    height: 3rem
+    width: 3rem
+    border-radius: 50%
+    border: .5rem solid $brown-color-dark
+    position: absolute
+    top: -.7rem
+    left:0rem
+
+    &::after
+      content: ""
+      display: block
+      height: 1.5rem
+      width: 1.5rem
+      border-radius: 50%
+      background: $brown-color-dark
+      position: absolute
+      top: 50%
+      left: 50%
+      transform: translate(-50%, -50%)
+      opacity: 0
+      transition: all .3s linear
+
+  &__input-radio:checked ~ &__label-radio &__button-radio::after
+    opacity: 1
+
+
+
+
+.text-align-left
+  text-align: left
